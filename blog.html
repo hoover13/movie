@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+	<script src="https://code.jquery.com/jquery-3.6.3.min.js" type="text/javascript"></script>
+	<style type="text/css">
+
+
+		body {
+			background: #FAD3E7;
+		}
+		.blog_form {
+			width: 50%;
+			background: #B9F3FC;
+			margin: 0px auto 20px;
+			padding: 40px 30px;
+			box-shadow: 5px 5px 5px #ddd, -5px -5px 5px #ddd;
+			border: 1px solid #aaa;
+			border-radius: 20px;
+			display: none;
+		}
+
+		* {
+			font-family: arial;
+		}
+
+		h1{
+			text-align: center;
+		}
+
+		input {
+			width: 100%;
+			height: 40px;
+			margin-bottom: 10px;
+			font-size: 16px;
+		}
+
+		textarea {
+			width: 100%;
+			margin-bottom: 10px;
+			font-size: 16px;
+		}
+
+		.create, .start {
+			background: #222;
+			color: #fff;
+			padding: 8px 16px;
+			font-size: 17px;
+			font-weight: bold;
+			border: 5px solid #555;
+			border-radius: 25px;
+		}
+
+		.blog {
+			display: flex;
+			justify-content: center;
+			flex-wrap: wrap;
+		}
+
+		.blog div {
+			width: 25%;
+			margin: 10px;
+			box-shadow: 5px 5px 5px #ddd, -5px -5px 5px #ddd;
+			border: 1px solid #aaa;
+			border-radius: 20px;
+			text-align: justify;
+			padding: 20px;
+			line-height: 35px;
+			background: #B9F3FC;
+
+		}
+
+		b {
+			font-size: 30px;
+			float: right;
+			cursor: pointer;
+		}
+
+
+
+
+	</style>
+</head>
+<body>
+
+	<button class="start">Start</button>
+
+	<div class="blog_form">
+		<h1>BLOG FORM</h1>
+		<input placeholder="Enter Title" type="" name="">
+		<textarea placeholder="Enter Description" rows="8"></textarea>
+		<button class="create">Create</button>
+	</div>
+	<div class="blog">
+		
+
+	
+	</div>
+
+
+
+
+
+
+
+	<script type="text/javascript">
+		$('.start').click(function(){
+			$('.blog_form').slideToggle()
+		})
+
+
+		$('.create').click(function(){
+			var title =  $('input').val()
+			var description =  $('textarea').val()
+
+			
+			
+			$('.blog').append('<div><b>&times;</b><h1>'+title+'</h1><p>'+description +'</p></div>')
+
+			$('input').val("")
+			$('textarea').val("")
+
+			$('b').click(function(){
+				$(this).parent().hide()
+			})
+		})
+
+
+
+
+
+
+	</script>
+
+</body>
+</html>
